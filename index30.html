@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projecto SP</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0px;
+      background-color: rgb(134, 192, 194);
+    }
+
+    header {
+      background-color: #b66262;
+      color: #fff;
+      padding: 20px;
+    }
+
+    nav {
+      background-color: #563cb4;
+      color: #380bdb;
+      padding: 10px;
+      height: 20px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 10px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #fff;
+    }
+
+    main {
+      padding: 20px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    audio {
+      margin-top: 10px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #slideshow {
+      position: relative;
+      height: 300px;
+      overflow: hidden;
+    }
+
+    #slideshow img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    #slideshow img.active {
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Bem-vindo ao Projecto SP</h1>
+    <section id="slideshow">
+      <img src="Assents/Imagem/WhatsApp Image 1.jpeg" alt="Imagem 1" style="height: 700px; width: 1320px;">
+      <img src="Assents/Imagem/WhatsApp Image 2.jpeg" alt="Imagem 2" style="height: 700px; width: 1320px;">
+      <img src="Assents/Imagem/WhatsApp Image 3.jpeg" alt="Imagem 3" style="height: 700px; width: 1320px;">
+      <img src="Assents/Imagem/WhatsApp Image 4.jpeg" alt="Imagem 3" style="height: 700px; width: 1320px;">
+    </section>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#ultimas_musicas">Últimas Músicas</a></li>
+      <li><a href="#artistas_destaque">Projecto SP</a></li>
+      <li><a href="#playlists">Playlists</a></li>
+      <li><a href="#generos_musicais">Gêneros Musicais</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="ultimas_musicas">
+      <h2>Últimas Músicas</h2>
+      <ul>
+        <li>
+          <h3>Ja Bazei 1</h3>
+          <p>Artista: Projecto SP</p>
+          <p>Álbum: Ja bazei</p>
+          <p>Duração: 3:30</p>
+          <audio controls>
+            <source src="Assents/Imagem/Projecto_SP-Ja_Bazei_(by_afrostudio)_(2).mp3" type="audio/mpeg">
+          </audio>
+          <img src="Assents/Imagem/WhatsApp Image 1.jpeg" alt="Foto do Artista 1" style="width: 100px; height: 100px;">
+          <a href="Assents/Imagem/Projecto_SP-Ja_Bazei_(by_afrostudio)_(2).mp3" download>Baixar</a>
+
+        </li>
+        <li>
+          <h3>Cansei 2</h3>
+          <p>Artista: King Khalass ft Hot24 2</p>
+          <p>Álbum: Ja Bazei 2</p>
+          <p>Duração: 4:15</p>
+          <audio controls>
+            <source src="Assents/Imagem/Cansei (Feat.Hot 24).mpeg" type="audio/mpeg">
+          </audio>
+          <img src="Assents/Imagem/WhatsApp Image 2.jpeg" alt="Foto do Artista 2" style="width: 100px; height: 100px;">
+          <a href="Assents/Imagem/Cansei (Feat.Hot 24).mp3" download>Baixar</a>
+        </li>
+      </ul>
+    </section>
+
+    <script>
+      function startSlideshow() {
+        const images = document.querySelectorAll("#slideshow img");
+        let currentIndex = 0;
+
+        function showImage(index) {
+          images.forEach((img) => img.classList.remove("active"));
+          images[index].classList.add("active");
+        }
+
+        function nextImage() {
+          currentIndex++;
+          if (currentIndex >= images.length) {
+            currentIndex = 0;
+          }
+          showImage(currentIndex);
+        }
+
+        setInterval(nextImage, 3000); // Troca de imagem a cada 3 segundos
+      }
+
+      startSlideshow();
+    </script>
+
+  </main>
+
+  <footer>
+    <p>© 2023 Projecto SP So Música. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
